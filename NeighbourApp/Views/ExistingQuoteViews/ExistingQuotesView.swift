@@ -12,7 +12,7 @@ struct ExistingQuotesView: View {
     var body: some View {
             List {
                 ForEach(base.quote) { quote in
-                    NavigationLink(destination: SingleExistingQuoteView(id: quote.id ?? UUID().uuidString.lowercased(), quoteItems: quote.items ?? [], price: quote.amount ?? 0.00, statusSelection: quote.status, reference: quote.reference ?? "None", notes: quote.notes ?? "")) {
+                    NavigationLink(destination: SingleExistingQuoteView(viewModel: ExistingQuoteViewModel(id: quote.id ?? UUID().uuidString.lowercased(), quoteItems: quote.items ?? [], price: quote.amount ?? 0, status: quote.status, reference: quote.reference ?? "", notes: quote.notes ?? "", customer: quote.customer ?? .empty, paidAmount: quote.paidAmount ?? 0))) {
                         ExistingQuoteSummaryView(quote: quote)
                     }
                 }

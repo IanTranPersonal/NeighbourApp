@@ -35,6 +35,7 @@ class Base: ObservableObject {
         }
         catch {
             print("Failed to retrieve data")
+            print(error.localizedDescription)
         }
     }
     
@@ -57,13 +58,7 @@ class Base: ObservableObject {
         do {
             guard let itemId = item.id else { return }
             let collection = db.collection("quotes").document(itemId)
-            let newValues: [String: Any] = [
-                "items": item.items ?? [],
-                "reference": item.reference ?? "",
-                "status": item.status,
-                "amount": item.amount ?? 0.00
-            ]
-            
+            let newValues = try Firestore.Encoder().encode(item)
             try await collection.updateData(newValues)
             print("Document Updated")
         }

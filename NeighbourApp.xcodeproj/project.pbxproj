@@ -25,11 +25,16 @@
 		BD4A39872C4535DB009F8BBE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A39862C4535DB009F8BBE /* Router.swift */; };
 		BD4A398C2C454365009F8BBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD4A398B2C454365009F8BBE /* GoogleService-Info.plist */; };
 		BD4A398E2C45631B009F8BBE /* SingleExistingQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A398D2C45631B009F8BBE /* SingleExistingQuoteView.swift */; };
-		BD4A39902C493398009F8BBE /* EditQuoteItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A398F2C493398009F8BBE /* EditQuoteItemsView.swift */; };
 		BD4A39922C496BB8009F8BBE /* QuoteNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A39912C496BB8009F8BBE /* QuoteNoteView.swift */; };
 		BD4A39942C4A7D76009F8BBE /* PDFViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A39932C4A7D76009F8BBE /* PDFViewRepresentable.swift */; };
 		BD4A39962C4A7E12009F8BBE /* TestPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A39952C4A7E12009F8BBE /* TestPDFView.swift */; };
 		BD4A39982C4A7EB0009F8BBE /* Sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BD4A39972C4A7EB0009F8BBE /* Sample.pdf */; };
+		BD4A399A2C4B9DD3009F8BBE /* SingleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A39992C4B9DD3009F8BBE /* SingleItemView.swift */; };
+		BD4A399C2C4BA2F7009F8BBE /* ItemNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A399B2C4BA2F7009F8BBE /* ItemNoteView.swift */; };
+		BDBA29D82C4BFA1400EBA486 /* SingleCustomItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA29D72C4BFA1400EBA486 /* SingleCustomItemView.swift */; };
+		BDBA29DA2C4D122C00EBA486 /* CustomerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA29D92C4D122C00EBA486 /* CustomerView.swift */; };
+		BDBA29DC2C4D687E00EBA486 /* RecordPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA29DB2C4D687E00EBA486 /* RecordPaymentView.swift */; };
+		BDBA29E42C5260F900EBA486 /* PDFGeneratorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA29E32C5260F900EBA486 /* PDFGeneratorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,11 +73,16 @@
 		BD4A39862C4535DB009F8BBE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		BD4A398B2C454365009F8BBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BD4A398D2C45631B009F8BBE /* SingleExistingQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleExistingQuoteView.swift; sourceTree = "<group>"; };
-		BD4A398F2C493398009F8BBE /* EditQuoteItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuoteItemsView.swift; sourceTree = "<group>"; };
 		BD4A39912C496BB8009F8BBE /* QuoteNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteNoteView.swift; sourceTree = "<group>"; };
 		BD4A39932C4A7D76009F8BBE /* PDFViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewRepresentable.swift; sourceTree = "<group>"; };
 		BD4A39952C4A7E12009F8BBE /* TestPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPDFView.swift; sourceTree = "<group>"; };
 		BD4A39972C4A7EB0009F8BBE /* Sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Sample.pdf; path = ../../../Downloads/Sample.pdf; sourceTree = "<group>"; };
+		BD4A39992C4B9DD3009F8BBE /* SingleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemView.swift; sourceTree = "<group>"; };
+		BD4A399B2C4BA2F7009F8BBE /* ItemNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNoteView.swift; sourceTree = "<group>"; };
+		BDBA29D72C4BFA1400EBA486 /* SingleCustomItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCustomItemView.swift; sourceTree = "<group>"; };
+		BDBA29D92C4D122C00EBA486 /* CustomerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerView.swift; sourceTree = "<group>"; };
+		BDBA29DB2C4D687E00EBA486 /* RecordPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPaymentView.swift; sourceTree = "<group>"; };
+		BDBA29E32C5260F900EBA486 /* PDFGeneratorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGeneratorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,16 +141,10 @@
 				BD4A398B2C454365009F8BBE /* GoogleService-Info.plist */,
 				BD4A39472C42C4FB009F8BBE /* NeighbourAppApp.swift */,
 				BD4A39492C42C4FB009F8BBE /* ContentView.swift */,
-				BD4A39712C42CDA5009F8BBE /* NewItemView.swift */,
-				BD4A39772C43EEEE009F8BBE /* Base.swift */,
-				BD4A39802C44153F009F8BBE /* Quote.swift */,
-				BD4A39822C442005009F8BBE /* ExistingQuotesView.swift */,
-				BD4A39842C442E38009F8BBE /* ExistingQuoteSummaryView.swift */,
-				BD4A398D2C45631B009F8BBE /* SingleExistingQuoteView.swift */,
-				BD4A39912C496BB8009F8BBE /* QuoteNoteView.swift */,
-				BD4A398F2C493398009F8BBE /* EditQuoteItemsView.swift */,
-				BD4A39862C4535DB009F8BBE /* Router.swift */,
+				BDBA29DF2C4E7DC900EBA486 /* Models */,
+				BDBA29DD2C4E7D8000EBA486 /* Views */,
 				BD4A39932C4A7D76009F8BBE /* PDFViewRepresentable.swift */,
+				BDBA29DE2C4E7DAE00EBA486 /* Graveyard */,
 				BD4A394B2C42C4FC009F8BBE /* Assets.xcassets */,
 				BD4A394D2C42C4FC009F8BBE /* Preview Content */,
 				BD4A39952C4A7E12009F8BBE /* TestPDFView.swift */,
@@ -178,6 +182,65 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDBA29DD2C4E7D8000EBA486 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BDBA29E22C4E7E0200EBA486 /* SharedViews */,
+				BDBA29E12C4E7DEC00EBA486 /* ExistingQuoteViews */,
+				BDBA29E02C4E7DDA00EBA486 /* NewQuoteViews */,
+				BDBA29D72C4BFA1400EBA486 /* SingleCustomItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BDBA29DE2C4E7DAE00EBA486 /* Graveyard */ = {
+			isa = PBXGroup;
+			children = (
+				BD4A39992C4B9DD3009F8BBE /* SingleItemView.swift */,
+			);
+			path = Graveyard;
+			sourceTree = "<group>";
+		};
+		BDBA29DF2C4E7DC900EBA486 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BD4A39772C43EEEE009F8BBE /* Base.swift */,
+				BD4A39802C44153F009F8BBE /* Quote.swift */,
+				BD4A39862C4535DB009F8BBE /* Router.swift */,
+				BDBA29E32C5260F900EBA486 /* PDFGeneratorModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BDBA29E02C4E7DDA00EBA486 /* NewQuoteViews */ = {
+			isa = PBXGroup;
+			children = (
+				BD4A39712C42CDA5009F8BBE /* NewItemView.swift */,
+			);
+			path = NewQuoteViews;
+			sourceTree = "<group>";
+		};
+		BDBA29E12C4E7DEC00EBA486 /* ExistingQuoteViews */ = {
+			isa = PBXGroup;
+			children = (
+				BD4A39822C442005009F8BBE /* ExistingQuotesView.swift */,
+				BD4A39842C442E38009F8BBE /* ExistingQuoteSummaryView.swift */,
+				BD4A398D2C45631B009F8BBE /* SingleExistingQuoteView.swift */,
+				BDBA29DB2C4D687E00EBA486 /* RecordPaymentView.swift */,
+			);
+			path = ExistingQuoteViews;
+			sourceTree = "<group>";
+		};
+		BDBA29E22C4E7E0200EBA486 /* SharedViews */ = {
+			isa = PBXGroup;
+			children = (
+				BD4A39912C496BB8009F8BBE /* QuoteNoteView.swift */,
+				BD4A399B2C4BA2F7009F8BBE /* ItemNoteView.swift */,
+				BDBA29D92C4D122C00EBA486 /* CustomerView.swift */,
+			);
+			path = SharedViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,15 +386,20 @@
 				BD4A39872C4535DB009F8BBE /* Router.swift in Sources */,
 				BD4A39832C442005009F8BBE /* ExistingQuotesView.swift in Sources */,
 				BD4A39782C43EEEE009F8BBE /* Base.swift in Sources */,
+				BD4A399A2C4B9DD3009F8BBE /* SingleItemView.swift in Sources */,
+				BD4A399C2C4BA2F7009F8BBE /* ItemNoteView.swift in Sources */,
+				BDBA29DC2C4D687E00EBA486 /* RecordPaymentView.swift in Sources */,
 				BD4A39722C42CDA5009F8BBE /* NewItemView.swift in Sources */,
 				BD4A394A2C42C4FB009F8BBE /* ContentView.swift in Sources */,
 				BD4A39812C44153F009F8BBE /* Quote.swift in Sources */,
 				BD4A39942C4A7D76009F8BBE /* PDFViewRepresentable.swift in Sources */,
 				BD4A39962C4A7E12009F8BBE /* TestPDFView.swift in Sources */,
+				BDBA29DA2C4D122C00EBA486 /* CustomerView.swift in Sources */,
 				BD4A39482C42C4FB009F8BBE /* NeighbourAppApp.swift in Sources */,
 				BD4A398E2C45631B009F8BBE /* SingleExistingQuoteView.swift in Sources */,
-				BD4A39902C493398009F8BBE /* EditQuoteItemsView.swift in Sources */,
+				BDBA29D82C4BFA1400EBA486 /* SingleCustomItemView.swift in Sources */,
 				BD4A39922C496BB8009F8BBE /* QuoteNoteView.swift in Sources */,
+				BDBA29E42C5260F900EBA486 /* PDFGeneratorModel.swift in Sources */,
 				BD4A39852C442E38009F8BBE /* ExistingQuoteSummaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

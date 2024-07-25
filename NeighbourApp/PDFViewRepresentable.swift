@@ -14,6 +14,7 @@ struct PDFKitView: UIViewRepresentable {
     func makeUIView(context: UIViewRepresentableContext<PDFKitView>) -> PDFView {
         // Creating a new PDFVIew and adding a document to it
         let pdfView = PDFView()
+        pdfView.autoScales = true
         pdfView.document = PDFDocument(url: self.url)
         return pdfView
     }
