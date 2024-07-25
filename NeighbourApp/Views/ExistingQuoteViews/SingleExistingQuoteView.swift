@@ -89,8 +89,11 @@ struct SingleExistingQuoteView: View {
                     .frame(width: 80, height: 80)
                     .cornerRadius(8)
                     .overlay {
-                        ShareLink("Share", item: viewModel.shareItem()!)
-                            .foregroundColor(.white)
+                        ShareLink(item: viewModel.shareItem()) {
+                            Label("Email", systemImage: "envelope.fill")
+                                .labelStyle(TopIconStyle())
+                                .foregroundColor(.white)
+                        }
                     }
             }
             if isShowingCustomer {
@@ -158,11 +161,28 @@ class ExistingQuoteViewModel: ObservableObject {
         quoteItems.append(QuoteItems(item:"New Item", itemNote: ""))
     }
     
-    func shareItem() -> URL? {
+    func shareItem() -> URL {
         let runner = PDFGenerator.shared
-        guard let pdf = runner.generatePDF(for: quote, backgroundPDF: Constants.pdfURL!) else { print("failed to get pdf")
-            return nil
+        let url = Constants.pdfURL!
+        if let pdf = runner.generatePDF(for: quote, backgroundPDF: url),
+           let item = runner.savePDF(data: pdf, fileName: "Invoice") {
+            return item
         }
-        return runner.savePDF(data: pdf, fileName: "Quote")!
+        return url
+    }
+}
+
+enum pdfErrors: Error {
+    case urlFailed
+    case pdfFailed
+    case generateFailed
+}
+
+public struct TopIconStyle: LabelStyle {
+    public func makeBody(configuration: Configuration) -> some View {
+        VStack(spacing: 10) {
+            configuration.icon
+            configuration.title
+        }
     }
 }
