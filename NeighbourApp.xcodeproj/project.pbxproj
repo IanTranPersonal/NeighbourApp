@@ -76,7 +76,7 @@
 		BD4A39912C496BB8009F8BBE /* QuoteNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteNoteView.swift; sourceTree = "<group>"; };
 		BD4A39932C4A7D76009F8BBE /* PDFViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewRepresentable.swift; sourceTree = "<group>"; };
 		BD4A39952C4A7E12009F8BBE /* TestPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPDFView.swift; sourceTree = "<group>"; };
-		BD4A39972C4A7EB0009F8BBE /* Sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Sample.pdf; path = ../../../Downloads/Sample.pdf; sourceTree = "<group>"; };
+		BD4A39972C4A7EB0009F8BBE /* Sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Sample.pdf; path = ../Sample.pdf; sourceTree = "<group>"; };
 		BD4A39992C4B9DD3009F8BBE /* SingleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemView.swift; sourceTree = "<group>"; };
 		BD4A399B2C4BA2F7009F8BBE /* ItemNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNoteView.swift; sourceTree = "<group>"; };
 		BDBA29D72C4BFA1400EBA486 /* SingleCustomItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCustomItemView.swift; sourceTree = "<group>"; };
