@@ -40,7 +40,7 @@ struct NewItemView: View {
             VStack(alignment: .leading) {
                 HStack {
                     Text("Total:")
-                    TextField("Amount", value: $viewModel.amount, format: .currency(code: "AUD"))
+                    TextField("", value: $viewModel.amount, format: .currency(code: "AUD"))
                         .frame(width: 150, height: 40)
                         .border(.gray)
                         .cornerRadius(3)
@@ -53,28 +53,44 @@ struct NewItemView: View {
             }
             
             HStack(spacing: 50) {
-                Button {
-                    showNotes.toggle()
-                } label: {
-                    VStack{
-                        Image(systemName: "square.and.pencil")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                        Text("Notes")
+                Rectangle()
+                    .fill(.blue)
+                    .cornerRadius(8)
+                    .frame(width: 80, height: 80)
+                    .shadow(radius: 10)
+                    .overlay {
+                        Button {
+                            showNotes.toggle()
+                        } label: {
+                            VStack{
+                                Image(systemName: "square.and.pencil")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                Text("Notes")
+                            }
+                            .foregroundColor(.white)
+                        }
                     }
-                }
-                Button {
-                    withAnimation(.linear){
-                        showCustomer.toggle()
+                Rectangle()
+                    .fill(.blue)
+                    .cornerRadius(8)
+                    .frame(width: 80, height: 80)
+                    .shadow(radius: 10)
+                    .overlay {
+                        Button {
+                            withAnimation(.linear){
+                                showCustomer.toggle()
+                            }
+                        } label: {
+                            VStack {
+                                Image(systemName: "person.fill.badge.plus")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                Text("Customer")
+                            }
+                            .foregroundColor(.white)
+                        }
                     }
-                } label: {
-                    VStack {
-                        Image(systemName: "person.crop.circle.fill.badge.plus")
-                            .resizable()
-                            .frame(width: 35, height: 30)
-                        Text("Customer")
-                    }
-                }
             }
             
         }
