@@ -35,6 +35,7 @@
 		BDBA29DA2C4D122C00EBA486 /* CustomerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA29D92C4D122C00EBA486 /* CustomerView.swift */; };
 		BDBA29DC2C4D687E00EBA486 /* RecordPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA29DB2C4D687E00EBA486 /* RecordPaymentView.swift */; };
 		BDBA29E42C5260F900EBA486 /* PDFGeneratorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA29E32C5260F900EBA486 /* PDFGeneratorModel.swift */; };
+		BDBCF3BA2C54CA9A00B29F5C /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBCF3B92C54CA9A00B29F5C /* SummaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		BDBA29D92C4D122C00EBA486 /* CustomerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerView.swift; sourceTree = "<group>"; };
 		BDBA29DB2C4D687E00EBA486 /* RecordPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPaymentView.swift; sourceTree = "<group>"; };
 		BDBA29E32C5260F900EBA486 /* PDFGeneratorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGeneratorModel.swift; sourceTree = "<group>"; };
+		BDBCF3B92C54CA9A00B29F5C /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				BDBA29E12C4E7DEC00EBA486 /* ExistingQuoteViews */,
 				BDBA29E02C4E7DDA00EBA486 /* NewQuoteViews */,
 				BDBA29D72C4BFA1400EBA486 /* SingleCustomItemView.swift */,
+				BDBCF3B92C54CA9A00B29F5C /* SummaryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				BD4A39812C44153F009F8BBE /* Quote.swift in Sources */,
 				BD4A39942C4A7D76009F8BBE /* PDFViewRepresentable.swift in Sources */,
 				BD4A39962C4A7E12009F8BBE /* TestPDFView.swift in Sources */,
+				BDBCF3BA2C54CA9A00B29F5C /* SummaryView.swift in Sources */,
 				BDBA29DA2C4D122C00EBA486 /* CustomerView.swift in Sources */,
 				BD4A39482C42C4FB009F8BBE /* NeighbourAppApp.swift in Sources */,
 				BD4A398E2C45631B009F8BBE /* SingleExistingQuoteView.swift in Sources */,

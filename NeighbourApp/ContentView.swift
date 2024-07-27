@@ -12,13 +12,22 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(path: $router.navPath) {
             VStack(spacing: 50) {
+                
+                Text("Greeting Name")
+                
+                // Insert Summary View Here
+                SummaryView()
+                
+                
+                
+                
                 Rectangle()
                     .fill(.green)
-                    .frame(width: 100, height: 100)
-                    .cornerRadius(5)
+                    .frame(width: UIScreen.main.bounds.width - 20, height: 100)
+                    .cornerRadius(12)
                     .shadow(radius: 8)
                     .overlay {
-                        Button("New") {
+                        Button("Start New Quote") {
                             router.navigate(to: .newQuote)
                         }
                         .foregroundColor(.white)
@@ -26,11 +35,11 @@ struct ContentView: View {
                 
                 Rectangle()
                     .fill(.blue)
-                    .frame(width: 100, height: 100)
-                    .cornerRadius(5)
+                    .frame(width: UIScreen.main.bounds.width - 20, height: 100)
+                    .cornerRadius(12)
                     .shadow(radius: 8)
                     .overlay {
-                        Button("Existing") {
+                        Button("View Existing Jobs") {
                             router.navigate(to: .existing)
                         }
                         .foregroundColor(.white)
@@ -45,7 +54,20 @@ struct ContentView: View {
                 }
             })
         }
-        
+    }
+    
+    private var greeting: String {
+        let time = Calendar.current.component(.hour, from: Date())
+        switch time {
+        case 0...3:
+            return "Good Evening"
+        case 3...12:
+            return "Good Morning"
+        case 12...6:
+            return "Good Afternoon"
+        default:
+            return "Good Evening"
+        }
     }
 }
 
