@@ -16,8 +16,8 @@ struct RecordPaymentView: View {
         ZStack {
             HStack {
                 Spacer()
-                Text("Paid:")
-                TextField("", value: $paidAmount, format: .currency(code: "AUD"))
+                Text("Paid: $")
+                TextField("", value: $paidAmount, format: .number)
                     .frame(width: 175, height: 50)
                     .border(.gray)
                     .keyboardType(.decimalPad)

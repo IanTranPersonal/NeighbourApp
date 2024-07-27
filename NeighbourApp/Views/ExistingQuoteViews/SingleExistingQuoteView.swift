@@ -129,7 +129,7 @@ struct SingleExistingQuoteView: View {
 }
 
 #Preview {
-    SingleExistingQuoteView(viewModel: ExistingQuoteViewModel(id: "", quoteItems: Constants.items, price: 888, status: "quote", reference: "ABC123", notes: "Something", customer: .empty, paidAmount: 0))
+    SingleExistingQuoteView(viewModel: ExistingQuoteViewModel(id: "", quoteItems: Constants.items, price: 888, status: "quote", reference: "ABC123", notes: "Something", customer: .empty, paidAmount: 0, total: 888))
 }
 
 class ExistingQuoteViewModel: ObservableObject {
@@ -141,8 +141,9 @@ class ExistingQuoteViewModel: ObservableObject {
     @Published var notes: String
     @Published var customer: Customer
     @Published var paidAmount: Double
+    var total: Double
     
-    init(id: String, quoteItems: [QuoteItems], price: Double, status: String, reference: String, notes: String, customer: Customer, paidAmount: Double) {
+    init(id: String, quoteItems: [QuoteItems], price: Double, status: String, reference: String, notes: String, customer: Customer, paidAmount: Double, total: Double) {
         self.id = id
         self.quoteItems = quoteItems
         self.price = price
@@ -151,21 +152,26 @@ class ExistingQuoteViewModel: ObservableObject {
         self.notes = notes
         self.customer = customer
         self.paidAmount = paidAmount
+        self.total = total
     }
     
     var quote: Quote {
-        return Quote(id: id, items: quoteItems, reference: reference, status: status, amount: price, paidAmount: paidAmount)
+        return Quote(id: id, items: quoteItems, reference: reference, status: status, amount: price, notes: notes, customer: customer, paidAmount: paidAmount, total: total)
     }
     
     func addItem() {
         quoteItems.append(QuoteItems(item:"New Item", itemNote: ""))
     }
     
+    private var fileName: String {
+        "\(status.capitalized)-\(reference)"
+    }
+    
     func shareItem() -> URL {
         let runner = PDFGenerator.shared
-        let url = Constants.pdfURL!
+        let url = status == "quote" ? Constants.quoteURL : Constants.invoiceURL
         if let pdf = runner.generatePDF(for: quote, backgroundPDF: url),
-           let item = runner.savePDF(data: pdf, fileName: "Invoice") {
+           let item = runner.savePDF(data: pdf, fileName: fileName) {
             return item
         }
         return url

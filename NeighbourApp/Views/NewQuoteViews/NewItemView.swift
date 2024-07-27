@@ -159,7 +159,7 @@ class NewItemViewModel: ObservableObject {
     }
     
     func onTapSave() async -> Quote {
-        return Quote(items: quoteItems, reference: reference, amount: amount, notes: additionalNotes, customer: customer)
+        return Quote(items: quoteItems, reference: reference, amount: amount, notes: additionalNotes, customer: customer, total: amount)
     }
 }
 

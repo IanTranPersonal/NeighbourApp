@@ -18,6 +18,7 @@ struct Quote: Codable, Identifiable {
     var companyCode: String?
     var customer: Customer?
     var paidAmount: Double?
+    var total: Double?
 }
 
 struct QuoteItems: Codable, Hashable {
@@ -49,5 +50,9 @@ class Constants {
     static let quotes = jobStatus.allCases.map { $0.rawValue}
     
     static let pdfURL = Bundle.main.url(forResource: "Sample", withExtension: "pdf")
+    
+    static let quoteURL = Bundle.main.url(forResource: "QuoteBase", withExtension: "pdf")!
+    
+    static let invoiceURL = Bundle.main.url(forResource: "InvoiceBase", withExtension: "pdf")!
 }
 
