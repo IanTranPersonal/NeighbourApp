@@ -30,17 +30,7 @@ class PDFGeneratorTests: XCTestCase {
     
     func testGeneratePDF() {
         // Create a mock Quote
-        let mockQuote = Quote(
-            id: "TEST123",
-            items: [QuoteItems(item: "Test Item", itemNote: "Test Note")],
-            reference: "REF123",
-            status: "Pending",
-            amount: 100.00,
-            notes: "Test Notes",
-            customer: Customer(name: "Test Customer", email: "test@example.com", phoneNumber: ""),
-            paidAmount: 50.00,
-            total: 100.00
-        )
+        let mockQuote = createMockQuote()
         
         // Create a mock URL for the background PDF
         let mockURL = Constants.pdfURL!
@@ -55,8 +45,16 @@ class PDFGeneratorTests: XCTestCase {
         if let pdfData = pdfData, let generatedPDF = PDFDocument(data: pdfData) {
             XCTAssertGreaterThan(generatedPDF.pageCount, 0)
             
-            // You can add more specific checks here, such as verifying text content
-            // This would require extracting text from the PDF, which is beyond the scope of this example
+            // Extract text from the PDF and verify content
+            if let page = generatedPDF.page(at: 0) {
+                let pageContent = page.string ?? ""
+                XCTAssertTrue(pageContent.contains(mockQuote.reference ?? ""))
+                XCTAssertTrue(pageContent.contains(mockQuote.customer?.name ?? ""))
+                XCTAssertTrue(pageContent.contains(mockQuote.customer?.email ?? ""))
+                XCTAssertTrue(pageContent.contains(mockQuote.notes ?? ""))
+            } else {
+                XCTFail("Failed to extract content from PDF page")
+            }
         } else {
             XCTFail("Failed to create PDFDocument from generated data")
         }
@@ -76,20 +74,43 @@ class PDFGeneratorTests: XCTestCase {
             XCTAssertTrue(FileManager.default.fileExists(atPath: url.path))
             
             // Verify file content
-            let savedData = try? Data(contentsOf: url)
-            XCTAssertEqual(savedData, testData)
+            do {
+                let savedData = try Data(contentsOf: url)
+                XCTAssertEqual(savedData, testData)
+            } catch {
+                XCTFail("Failed to read saved PDF data: \(error)")
+            }
             
             // Clean up: delete the test file
-            try? FileManager.default.removeItem(at: url)
+            do {
+                try FileManager.default.removeItem(at: url)
+            } catch {
+                print("Warning: Failed to delete test file: \(error)")
+            }
         }
     }
     
     func testGeneratePDFWithInvalidBackgroundURL() {
-        let mockQuote = Quote(id: "TEST123", items: [], reference: "REF123", status: "Pending", amount: 100.00, notes: nil, customer: nil, paidAmount: 0, total: 100.00)
+        let mockQuote = createMockQuote()
         let invalidURL = URL(fileURLWithPath: "/invalid/path/to/background.pdf")
         
         let pdfData = pdfGenerator.generatePDF(for: mockQuote, backgroundPDF: invalidURL)
         
         XCTAssertNil(pdfData)
+    }
+    
+    // Helper method to create a mock Quote
+    private func createMockQuote() -> Quote {
+        return Quote(
+            id: "TEST123",
+            items: [QuoteItems(item: "Test Item", itemNote: "Test Note")],
+            reference: "REF123",
+            status: "Pending",
+            amount: 100.00,
+            notes: "Test Notes",
+            customer: Customer(name: "Test Customer", email: "test@example.com", phoneNumber: ""),
+            paidAmount: 50.00,
+            total: 100.00
+        )
     }
 }

@@ -10,13 +10,15 @@ import FirebaseCore
 
 @main
 struct NeighbourAppApp: App {
+    var router = Router()
     var base = Base()
     init() {
         FirebaseApp.configure()
     }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(router)
+            // AuthView()
         }.environmentObject(base)
     }
 }

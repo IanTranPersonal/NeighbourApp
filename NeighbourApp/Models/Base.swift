@@ -25,6 +25,27 @@ class Base: ObservableObject {
         }
     }
     
+//    func submitItem(for item: Quote) async throws{
+//        do {
+//            guard let ep = URL(string: "ep") else { return }
+//            let authorisationToken = "TBA"
+//            var request = URLRequest(url: ep)
+//            request.httpMethod = "POST"
+//            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//            request.setValue(authorisationToken, forHTTPHeaderField: "Authorization")
+//            let encoder = try JSONEncoder().encode(item)
+//            let (data, response) = try await URLSession.shared.upload(for: request, from: encoder)
+//            guard let returnedResponse = response as? HTTPURLResponse, returnedResponse.statusCode == 200 else {
+//                throw CallErrors.uploadFailed
+//            }
+//            print("Successfully sent item")
+//            
+//        }
+//        catch {
+//            print(error.localizedDescription)
+//        }
+//    }
+    
     @MainActor
     func retrieveData() async {
         do {
@@ -38,6 +59,21 @@ class Base: ObservableObject {
             print(error.localizedDescription)
         }
     }
+    
+//    func retrieveDataNew() async throws {
+//        do {
+//            guard let ep = URL(string: "ep") else { return }
+//            let authorizationToken = "TBA"
+//            var request = URLRequest(url: ep)
+//            request.setValue(authorizationToken, forHTTPHeaderField: "Authorization")
+//            let (data, response) = try await URLSession.shared.data(for: request)
+//            guard let returned = response as? HTTPURLResponse, returned.statusCode == 200 else {
+//                throw CallErrors.retrieveFailed
+//            }
+//            let result = try JSONDecoder().decode(Quote.self, from: data)
+//            
+//        }
+//    }
     
     @MainActor
     func retrieveSingleQuote(for id: String) async -> Quote? {
@@ -82,4 +118,9 @@ class Base: ObservableObject {
     // TODO: Remove quote
     
     
+}
+
+enum CallErrors: Error {
+    case uploadFailed
+    case retrieveFailed
 }
