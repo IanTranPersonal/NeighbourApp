@@ -45,7 +45,7 @@ struct ProfileView: View {
                 .foregroundStyle(.red)
             }
         }
-        .foregroundStyle(.black)
+        .foregroundStyle(.primary)
         .onAppear(perform: {
             viewModel.retrieveUser()
         })

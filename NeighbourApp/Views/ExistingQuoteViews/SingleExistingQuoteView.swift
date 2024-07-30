@@ -114,7 +114,7 @@ struct SingleExistingQuoteView: View {
                 .presentationDetents([.height(300)])
         }
         .sheet(isPresented: $isShowingPayment) {
-            RecordPaymentView(paidAmount: $viewModel.paidAmount, amount: $viewModel.price, isPresented: $isShowingPayment, status: $viewModel.status)
+            RecordPaymentView(mainViewModel: viewModel, amount: viewModel.price, received: $viewModel.paidAmount, isPresented: $isShowingPayment, status: $viewModel.status)
                 .presentationDetents([.height(200)])
         }
         .navigationTitle("Reference: \(viewModel.reference)")

@@ -8,28 +8,30 @@
 import SwiftUI
 
 struct RecordPaymentView: View {
-    @Binding var paidAmount: Double
-    @Binding var amount: Double
+    @ObservedObject var mainViewModel: ExistingQuoteViewModel
+    @State var paidAmount: Double = 0
+    @State var amount: Double
+    @Binding var received: Double
     @Binding var isPresented: Bool
     @Binding var status: String
     var body: some View {
-        ZStack {
+        ZStack(alignment: .center) {
+            Text("Received: \(received.formatted(.currency(code: "AUD")))")
+                .offset(x: 0, y: -50)
             HStack {
                 Spacer()
-                Text("Paid: $")
+                Text("New Payment: $")
                 TextField("", value: $paidAmount, format: .number)
                     .frame(width: 175, height: 50)
                     .border(.gray)
                     .keyboardType(.decimalPad)
                 Spacer()
             }
-            Text("Due $\(max(amount, 0), specifier: "%.2f")")
+            Text("Balance $\(max(amount, 0), specifier: "%.2f")")
                 .offset(x: 0, y: 50)
             Button("Done") {
                 withAnimation(.linear) {
                     isPresented = false
-                }
-                withAnimation(.smooth) {
                     updateValues()
                 }
             }
@@ -43,11 +45,12 @@ struct RecordPaymentView: View {
     private func updateValues() {
         guard amount >= 0 else { return }
         let newPrice = amount - paidAmount
-        amount = max(newPrice, 0)
-        if amount == 0 {
+        mainViewModel.paidAmount += paidAmount
+        mainViewModel.price = newPrice
+        if newPrice == 0 {
             status = "paid"
         }
-        else if paidAmount != 0.00 {
+        else if newPrice != 0.00 {
             status = "deposit"
         }
         else {
@@ -57,5 +60,5 @@ struct RecordPaymentView: View {
 }
 
 #Preview {
-    RecordPaymentView(paidAmount: .constant(0), amount: .constant(5000), isPresented: .constant(true), status: .constant("quote"))
+    RecordPaymentView(mainViewModel: ExistingQuoteViewModel(id: "", quoteItems: Constants.items, price: 5000, status: "quote", reference: "ABC", notes: "", customer: Customer.empty, paidAmount: 0, total: 5000), paidAmount: 0, amount: 5000, received: .constant(500), isPresented: .constant(true), status: .constant("quote"))
 }

@@ -14,7 +14,8 @@ struct HomeView: View {
         NavigationStack(path: $router.navPath) {
             VStack(spacing: 50) {
                 
-                Text("\(greeting) Name")
+                Text(greeting)
+                    .font(.largeTitle)
                 
                 SummaryView()
                 
