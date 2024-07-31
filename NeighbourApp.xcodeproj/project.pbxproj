@@ -27,6 +27,11 @@
 		BD4A39982C4A7EB0009F8BBE /* Sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BD4A39972C4A7EB0009F8BBE /* Sample.pdf */; };
 		BD4A399A2C4B9DD3009F8BBE /* SingleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A39992C4B9DD3009F8BBE /* SingleItemView.swift */; };
 		BD4A399C2C4BA2F7009F8BBE /* ItemNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A399B2C4BA2F7009F8BBE /* ItemNoteView.swift */; };
+		BD4D6B6A2C5A3316007BE669 /* InvoicrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B692C5A3316007BE669 /* InvoicrTests.swift */; };
+		BD4D6B752C5A3369007BE669 /* NewQuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B702C5A3369007BE669 /* NewQuoteTests.swift */; };
+		BD4D6B762C5A3369007BE669 /* UserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B712C5A3369007BE669 /* UserModelTests.swift */; };
+		BD4D6B772C5A3369007BE669 /* PDFGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B722C5A3369007BE669 /* PDFGeneratorTests.swift */; };
+		BD4D6B792C5A3369007BE669 /* ExistingQuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B742C5A3369007BE669 /* ExistingQuoteTests.swift */; };
 		BDBA29D82C4BFA1400EBA486 /* SingleCustomItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA29D72C4BFA1400EBA486 /* SingleCustomItemView.swift */; };
 		BDBA29DA2C4D122C00EBA486 /* CustomerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA29D92C4D122C00EBA486 /* CustomerView.swift */; };
 		BDBA29DC2C4D687E00EBA486 /* RecordPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA29DB2C4D687E00EBA486 /* RecordPaymentView.swift */; };
@@ -44,14 +49,22 @@
 		BDBCF3D42C57D79500B29F5C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBCF3D32C57D79500B29F5C /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BD4D6B6B2C5A3316007BE669 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD4A393C2C42C4FB009F8BBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD4A39432C42C4FB009F8BBE;
+			remoteInfo = NeighbourApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		BD4A39442C42C4FB009F8BBE /* Invoicr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Invoicr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4A39472C42C4FB009F8BBE /* NeighbourAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourAppApp.swift; sourceTree = "<group>"; };
 		BD4A39492C42C4FB009F8BBE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BD4A394B2C42C4FC009F8BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD4A394E2C42C4FC009F8BBE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		BD4A39622C42C4FC009F8BBE /* NeighbourAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourAppUITests.swift; sourceTree = "<group>"; };
-		BD4A39642C42C4FC009F8BBE /* NeighbourAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighbourAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BD4A39712C42CDA5009F8BBE /* NewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
 		BD4A39772C43EEEE009F8BBE /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		BD4A39802C44153F009F8BBE /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
@@ -65,6 +78,12 @@
 		BD4A39972C4A7EB0009F8BBE /* Sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Sample.pdf; path = ../Sample.pdf; sourceTree = "<group>"; };
 		BD4A39992C4B9DD3009F8BBE /* SingleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemView.swift; sourceTree = "<group>"; };
 		BD4A399B2C4BA2F7009F8BBE /* ItemNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNoteView.swift; sourceTree = "<group>"; };
+		BD4D6B672C5A3316007BE669 /* InvoicrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InvoicrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD4D6B692C5A3316007BE669 /* InvoicrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicrTests.swift; sourceTree = "<group>"; };
+		BD4D6B702C5A3369007BE669 /* NewQuoteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewQuoteTests.swift; sourceTree = "<group>"; };
+		BD4D6B712C5A3369007BE669 /* UserModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelTests.swift; sourceTree = "<group>"; };
+		BD4D6B722C5A3369007BE669 /* PDFGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFGeneratorTests.swift; sourceTree = "<group>"; };
+		BD4D6B742C5A3369007BE669 /* ExistingQuoteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingQuoteTests.swift; sourceTree = "<group>"; };
 		BDBA29D72C4BFA1400EBA486 /* SingleCustomItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCustomItemView.swift; sourceTree = "<group>"; };
 		BDBA29D92C4D122C00EBA486 /* CustomerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerView.swift; sourceTree = "<group>"; };
 		BDBA29DB2C4D687E00EBA486 /* RecordPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPaymentView.swift; sourceTree = "<group>"; };
@@ -93,6 +112,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BD4D6B642C5A3316007BE669 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -101,7 +127,7 @@
 			children = (
 				BDBCF3C52C56540500B29F5C /* Launch Screen.storyboard */,
 				BD4A39462C42C4FB009F8BBE /* NeighbourApp */,
-				BD4A39612C42C4FC009F8BBE /* NeighbourAppUITests */,
+				BD4D6B682C5A3316007BE669 /* InvoicrTests */,
 				BD4A39452C42C4FB009F8BBE /* Products */,
 				BD4A39882C45426F009F8BBE /* Frameworks */,
 			);
@@ -111,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				BD4A39442C42C4FB009F8BBE /* Invoicr.app */,
+				BD4D6B672C5A3316007BE669 /* InvoicrTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,20 +168,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		BD4A39612C42C4FC009F8BBE /* NeighbourAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				BD4A39622C42C4FC009F8BBE /* NeighbourAppUITests.swift */,
-				BD4A39642C42C4FC009F8BBE /* NeighbourAppUITestsLaunchTests.swift */,
-			);
-			path = NeighbourAppUITests;
-			sourceTree = "<group>";
-		};
 		BD4A39882C45426F009F8BBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD4D6B682C5A3316007BE669 /* InvoicrTests */ = {
+			isa = PBXGroup;
+			children = (
+				BD4D6B742C5A3369007BE669 /* ExistingQuoteTests.swift */,
+				BD4D6B702C5A3369007BE669 /* NewQuoteTests.swift */,
+				BD4D6B722C5A3369007BE669 /* PDFGeneratorTests.swift */,
+				BD4D6B712C5A3369007BE669 /* UserModelTests.swift */,
+				BD4D6B692C5A3316007BE669 /* InvoicrTests.swift */,
+			);
+			path = InvoicrTests;
 			sourceTree = "<group>";
 		};
 		BDBA29DD2C4E7D8000EBA486 /* Views */ = {
@@ -266,6 +296,24 @@
 			productReference = BD4A39442C42C4FB009F8BBE /* Invoicr.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BD4D6B662C5A3316007BE669 /* InvoicrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD4D6B6D2C5A3316007BE669 /* Build configuration list for PBXNativeTarget "InvoicrTests" */;
+			buildPhases = (
+				BD4D6B632C5A3316007BE669 /* Sources */,
+				BD4D6B642C5A3316007BE669 /* Frameworks */,
+				BD4D6B652C5A3316007BE669 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD4D6B6C2C5A3316007BE669 /* PBXTargetDependency */,
+			);
+			name = InvoicrTests;
+			productName = InvoicrTests;
+			productReference = BD4D6B672C5A3316007BE669 /* InvoicrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -278,6 +326,10 @@
 				TargetAttributes = {
 					BD4A39432C42C4FB009F8BBE = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					BD4D6B662C5A3316007BE669 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = BD4A39432C42C4FB009F8BBE;
 					};
 				};
 			};
@@ -298,6 +350,7 @@
 			projectRoot = "";
 			targets = (
 				BD4A39432C42C4FB009F8BBE /* NeighbourApp */,
+				BD4D6B662C5A3316007BE669 /* InvoicrTests */,
 			);
 		};
 /* End PBXProject section */
@@ -314,6 +367,13 @@
 				BDBCF3BE2C551F3200B29F5C /* QuoteBase.pdf in Resources */,
 				BD4A398C2C454365009F8BBE /* GoogleService-Info.plist in Resources */,
 				BDBCF3C62C56540500B29F5C /* Launch Screen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD4D6B652C5A3316007BE669 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +412,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BD4D6B632C5A3316007BE669 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD4D6B6A2C5A3316007BE669 /* InvoicrTests.swift in Sources */,
+				BD4D6B762C5A3369007BE669 /* UserModelTests.swift in Sources */,
+				BD4D6B772C5A3369007BE669 /* PDFGeneratorTests.swift in Sources */,
+				BD4D6B752C5A3369007BE669 /* NewQuoteTests.swift in Sources */,
+				BD4D6B792C5A3369007BE669 /* ExistingQuoteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BD4D6B6C2C5A3316007BE669 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD4A39432C42C4FB009F8BBE /* NeighbourApp */;
+			targetProxy = BD4D6B6B2C5A3316007BE669 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BD4A39662C42C4FC009F8BBE /* Debug */ = {
@@ -536,6 +616,42 @@
 			};
 			name = Release;
 		};
+		BD4D6B6E2C5A3316007BE669 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63H76G88XN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = None.InvoicrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Invoicr.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Invoicr";
+			};
+			name = Debug;
+		};
+		BD4D6B6F2C5A3316007BE669 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63H76G88XN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = None.InvoicrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Invoicr.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Invoicr";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -553,6 +669,15 @@
 			buildConfigurations = (
 				BD4A39692C42C4FC009F8BBE /* Debug */,
 				BD4A396A2C42C4FC009F8BBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD4D6B6D2C5A3316007BE669 /* Build configuration list for PBXNativeTarget "InvoicrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD4D6B6E2C5A3316007BE669 /* Debug */,
+				BD4D6B6F2C5A3316007BE669 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
