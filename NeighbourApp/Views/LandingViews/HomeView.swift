@@ -10,37 +10,67 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var base: Base
     @EnvironmentObject var router: Router
+    @StateObject private var user = UserModel.instance
+    @StateObject private var imageManager = ImageStorageManager()
     var body: some View {
         NavigationStack(path: $router.navPath) {
             VStack(spacing: 50) {
                 
                 Text(greeting)
                     .font(.largeTitle)
+                    .foregroundStyle(Color.customYellow)
+                Capsule()
+                    .fill(Color.deepBlue.opacity(0.75))
+                    .frame(width: 300, height: 3)
+                    .padding(.top, -40)
                 
                 SummaryView()
+                    .shadow(color: .skyBlue, radius: 1)
                 
-                Rectangle()
-                    .fill(.green)
+                Capsule()
+                    .fill(Color.prussianBlue)
                     .frame(width: UIScreen.main.bounds.width - 20, height: 100)
                     .cornerRadius(12)
-                    .shadow(radius: 8)
+                    .shadow(color: .skyBlue, radius: 5)
                     .overlay {
-                        Button("Start New Quote") {
+                        Button {
                             router.navigate(to: .newQuote)
+                        } label: {
+                            HStack {
+                                Text("Start New Quote")
+                                    .foregroundStyle(Color.customYellow)
+                                    .font(.title3)
+                                    .padding( 30)
+                                
+                                Image(systemName: "plus.circle")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundStyle(Color.customYellow)
+                            }
                         }
-                        .foregroundColor(.white)
                     }
                 
-                Rectangle()
-                    .fill(.blue)
+                Capsule()
+                    .fill(Color.prussianBlue)
                     .frame(width: UIScreen.main.bounds.width - 20, height: 100)
                     .cornerRadius(12)
-                    .shadow(radius: 8)
+                    .shadow(color: .skyBlue, radius: 5)
                     .overlay {
-                        Button("View Existing Jobs") {
+                        Button {
                             router.navigate(to: .existing)
+                        } label: {
+                            HStack {
+                                Text("View Existing Jobs")
+                                    .foregroundStyle(Color.customYellow)
+                                    .font(.title3)
+                                    .padding(30)
+                                
+                                Image(systemName: "list.clipboard")
+                                    .resizable()
+                                    .frame(width: 40, height: 50)
+                                    .foregroundStyle(Color.customYellow)
+                            }
                         }
-                        .foregroundColor(.white)
                     }
             }
             .navigationDestination(for: Router.Destination.self, destination: { destination in
@@ -51,6 +81,25 @@ struct HomeView: View {
                     ExistingQuotesView().environmentObject(router)
                 }
             })
+        }
+        
+        .onAppear(perform: {
+            if user.user == UserModel.emptyUser {
+                user.retrieveUser()
+            }
+            if user.userLogo == nil {
+                getImage()
+            }
+        })
+    }
+    
+    private func getImage() {
+        Task {
+            guard !user.user.email.isEmpty else { return }
+            try await imageManager.retrieveImage(userId: user.user.email)
+            if let image = imageManager.selectedImage {
+                user.userLogo = image
+            }
         }
     }
     

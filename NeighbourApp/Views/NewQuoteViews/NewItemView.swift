@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import Observation
 
 struct NewItemView: View {
     @EnvironmentObject var router: Router
     @EnvironmentObject var base: Base
-    @StateObject var viewModel = NewItemViewModel()
+    @State var viewModel = NewItemViewModel()
     private let itemOptions = Constants.items.map {$0.item}
     @State var showNotes: Bool = false
     @State var showCustomer: Bool = false
@@ -112,7 +113,7 @@ struct NewItemView: View {
             QuoteNoteView(note: $viewModel.additionalNotes, isPresented: $showNotes)
                 .presentationDetents([.height(300)])
         }
-        if showCustomer {
+        .sheet(isPresented: $showCustomer) {
             CustomerView(name: $viewModel.customer.name, email: $viewModel.customer.email, phoneNumber: $viewModel.customer.phoneNumber, isShowing: $showCustomer)
         }
     }
@@ -127,12 +128,13 @@ struct NewItemView: View {
 }
 
 @MainActor
-class NewItemViewModel: ObservableObject {
-    @Published var quoteItems: [QuoteItems] = []
-    @Published var reference: String = ""
-    @Published var amount: Double = 0.00
-    @Published var additionalNotes: String = ""
-    @Published var customer: Customer = Customer.empty
+@Observable
+class NewItemViewModel {
+    var quoteItems: [QuoteItems] = []
+    var reference: String = ""
+    var amount: Double = 0.00
+    var additionalNotes: String = ""
+    var customer: Customer = Customer.empty
     
     var formatter: NumberFormatter {
         let formatter = NumberFormatter()

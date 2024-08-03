@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AuthView: View {
     @ObservedObject var router = AuthRouter()
+    @EnvironmentObject var appRootManager: AppRootManager
+    @StateObject private var authManager = AuthManager()
     var body: some View {
         NavigationStack(path: $router.navPath) {
             ZStack {
@@ -21,17 +23,18 @@ struct AuthView: View {
                         .font(.largeTitle)
                         .bold()
                         .foregroundStyle(.primary)
+                        .shadow(color: .skyBlue, radius: 5)
                     
                     Spacer()
                     
                     Rectangle()
-                        .fill(.blue)
+                        .fill(Color.prussianBlue)
                         .frame(width: UIScreen.main.bounds.width - 20, height: 70)
                         .cornerRadius(12)
-                        .shadow(radius: 10)
+                        .shadow(color: .skyBlue ,radius: 5)
                         .overlay {
                             Text("Log in")
-                                .foregroundColor(.yellow)
+                                .foregroundColor(.customYellow)
                                 .font(.title)
                         }
                         .padding(.bottom, 30)
@@ -40,13 +43,13 @@ struct AuthView: View {
                         }
                     
                     Rectangle()
-                        .fill(.blue)
+                        .fill(Color.prussianBlue)
                         .frame(width: UIScreen.main.bounds.width - 20, height: 70)
                         .cornerRadius(12)
-                        .shadow(radius: 10)
+                        .shadow(color: .skyBlue, radius: 5)
                         .overlay {
                             Text("Register")
-                                .foregroundColor(.yellow)
+                                .foregroundColor(.customYellow)
                                 .font(.title)
                         }
                     
@@ -64,6 +67,16 @@ struct AuthView: View {
                     }
                 })
             }
+            .onAppear(perform: {
+                authManager.setupAuthListener()
+                if authManager.user != nil {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        withAnimation(.smooth()) {
+                            appRootManager.currentRoot = .main
+                        }
+                    }
+                }
+            })
         }
         
     }

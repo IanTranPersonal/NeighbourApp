@@ -11,12 +11,12 @@ struct SummaryView: View {
     @EnvironmentObject var base: Base
     var body: some View {
         ZStack(alignment: .leading) {
-            Text("Summary")
+            Text("Quick Summary")
                 .offset(y: -90)
                 .foregroundColor(.gray)
                 .bold()
             Rectangle()
-                .fill(Color.gray.opacity(0.3))
+                .fill(Color.deepBlue)
                 .frame(width: UIScreen.main.bounds.width * 0.8, height: 150)
                 .cornerRadius(8)
                 .shadow(radius: 10)

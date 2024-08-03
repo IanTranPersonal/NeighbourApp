@@ -17,25 +17,23 @@ struct RecordPaymentView: View {
     var body: some View {
         ZStack(alignment: .center) {
             Text("Received: \(received.formatted(.currency(code: "AUD")))")
-                .offset(x: 0, y: -50)
-            HStack {
-                Spacer()
-                Text("New Payment: $")
-                TextField("", value: $paidAmount, format: .number)
+                .offset(x: 0, y: -70)
+            VStack {
+                Text("New Payment")
+                TextField("$", value: $paidAmount, format: .number)
                     .frame(width: 175, height: 50)
                     .border(.gray)
                     .keyboardType(.decimalPad)
-                Spacer()
             }
             Text("Balance $\(max(amount, 0), specifier: "%.2f")")
-                .offset(x: 0, y: 50)
+                .offset(x: 0, y: 70)
             Button("Done") {
                 withAnimation(.linear) {
                     isPresented = false
                     updateValues()
                 }
             }
-            .offset(y: 100)
+            .offset(y: 120)
             .buttonStyle(.borderedProminent)
         }
     }

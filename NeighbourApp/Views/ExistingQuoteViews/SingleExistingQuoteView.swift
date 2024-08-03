@@ -32,6 +32,7 @@ struct SingleExistingQuoteView: View {
                 }
                 .padding(.top, 20)
             }
+            .scrollContentBackground(.hidden)
             Spacer()
                 Button("Record Payment") {
                     withAnimation(.easeInOut) {
@@ -96,7 +97,7 @@ struct SingleExistingQuoteView: View {
                         }
                     }
             }
-            if isShowingCustomer {
+            .sheet(isPresented: $isShowingCustomer) {
                 CustomerView(name: $viewModel.customer.name, email: $viewModel.customer.email, phoneNumber: $viewModel.customer.phoneNumber, isShowing: $isShowingCustomer)
             }
         }
@@ -115,7 +116,7 @@ struct SingleExistingQuoteView: View {
         }
         .sheet(isPresented: $isShowingPayment) {
             RecordPaymentView(mainViewModel: viewModel, amount: viewModel.price, received: $viewModel.paidAmount, isPresented: $isShowingPayment, status: $viewModel.status)
-                .presentationDetents([.height(200)])
+                .presentationDetents([.height(300)])
         }
         .navigationTitle("Reference: \(viewModel.reference)")
         .padding()

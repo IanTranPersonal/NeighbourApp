@@ -10,6 +10,7 @@ import FirebaseCore
 
 @main
 struct NeighbourAppApp: App {
+    @StateObject var appRootManager = AppRootManager()
     var router = Router()
     var base = Base()
     init() {
@@ -17,8 +18,17 @@ struct NeighbourAppApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(router)
-            // AuthView()
-        }.environmentObject(base)
+            Group {
+                switch appRootManager.currentRoot {
+                case .splash:
+                    SplashView()
+                case .authentication:
+                    AuthView()
+                case .main:
+                    ContentView().environmentObject(router).environmentObject(base)
+                }
+            }
+            .environmentObject(appRootManager)
+        }
     }
 }

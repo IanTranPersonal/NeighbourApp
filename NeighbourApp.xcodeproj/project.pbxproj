@@ -32,13 +32,22 @@
 		BD4D6B762C5A3369007BE669 /* UserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B712C5A3369007BE669 /* UserModelTests.swift */; };
 		BD4D6B772C5A3369007BE669 /* PDFGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B722C5A3369007BE669 /* PDFGeneratorTests.swift */; };
 		BD4D6B792C5A3369007BE669 /* ExistingQuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B742C5A3369007BE669 /* ExistingQuoteTests.swift */; };
+		BD4D6B7B2C5A3B16007BE669 /* EmailFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B7A2C5A3B16007BE669 /* EmailFormatter.swift */; };
+		BD4D6B7D2C5B8E65007BE669 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B7C2C5B8E65007BE669 /* AuthManager.swift */; };
+		BD4D6B7F2C5B8EF4007BE669 /* AppRootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B7E2C5B8EF4007BE669 /* AppRootManager.swift */; };
+		BD4D6B812C5B913C007BE669 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B802C5B913C007BE669 /* ForgotPasswordView.swift */; };
+		BD4D6B832C5B9D38007BE669 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B822C5B9D38007BE669 /* SplashView.swift */; };
+		BD4D6B852C5BAC53007BE669 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BD4D6B842C5BAC53007BE669 /* FirebaseStorage */; };
+		BD4D6B872C5BB5B6007BE669 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B862C5BB5B6007BE669 /* ImageManager.swift */; };
+		BD4D6B8B2C5BB986007BE669 /* TestImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B8A2C5BB986007BE669 /* TestImageView.swift */; };
+		BD4D6B8E2C5D0ADB007BE669 /* InvoiceBase.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BD4D6B8C2C5D0ADB007BE669 /* InvoiceBase.pdf */; };
+		BD4D6B8F2C5D0ADB007BE669 /* QuoteBase.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BD4D6B8D2C5D0ADB007BE669 /* QuoteBase.pdf */; };
+		BD62219B2C5D1D4D00B9C4B0 /* DeleteAccountConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD62219A2C5D1D4D00B9C4B0 /* DeleteAccountConfirmation.swift */; };
 		BDBA29D82C4BFA1400EBA486 /* SingleCustomItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA29D72C4BFA1400EBA486 /* SingleCustomItemView.swift */; };
 		BDBA29DA2C4D122C00EBA486 /* CustomerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA29D92C4D122C00EBA486 /* CustomerView.swift */; };
 		BDBA29DC2C4D687E00EBA486 /* RecordPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA29DB2C4D687E00EBA486 /* RecordPaymentView.swift */; };
 		BDBA29E42C5260F900EBA486 /* PDFGeneratorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA29E32C5260F900EBA486 /* PDFGeneratorModel.swift */; };
 		BDBCF3BA2C54CA9A00B29F5C /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBCF3B92C54CA9A00B29F5C /* SummaryView.swift */; };
-		BDBCF3BD2C551F3200B29F5C /* InvoiceBase.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BDBCF3BB2C551F3200B29F5C /* InvoiceBase.pdf */; };
-		BDBCF3BE2C551F3200B29F5C /* QuoteBase.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BDBCF3BC2C551F3200B29F5C /* QuoteBase.pdf */; };
 		BDBCF3C62C56540500B29F5C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDBCF3C52C56540500B29F5C /* Launch Screen.storyboard */; };
 		BDBCF3C82C56566E00B29F5C /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBCF3C72C56566E00B29F5C /* AuthView.swift */; };
 		BDBCF3CA2C56655300B29F5C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBCF3C92C56655300B29F5C /* LoginView.swift */; };
@@ -84,13 +93,21 @@
 		BD4D6B712C5A3369007BE669 /* UserModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelTests.swift; sourceTree = "<group>"; };
 		BD4D6B722C5A3369007BE669 /* PDFGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFGeneratorTests.swift; sourceTree = "<group>"; };
 		BD4D6B742C5A3369007BE669 /* ExistingQuoteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingQuoteTests.swift; sourceTree = "<group>"; };
+		BD4D6B7A2C5A3B16007BE669 /* EmailFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFormatter.swift; sourceTree = "<group>"; };
+		BD4D6B7C2C5B8E65007BE669 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		BD4D6B7E2C5B8EF4007BE669 /* AppRootManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootManager.swift; sourceTree = "<group>"; };
+		BD4D6B802C5B913C007BE669 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		BD4D6B822C5B9D38007BE669 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		BD4D6B862C5BB5B6007BE669 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		BD4D6B8A2C5BB986007BE669 /* TestImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestImageView.swift; sourceTree = "<group>"; };
+		BD4D6B8C2C5D0ADB007BE669 /* InvoiceBase.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = InvoiceBase.pdf; sourceTree = "<group>"; };
+		BD4D6B8D2C5D0ADB007BE669 /* QuoteBase.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = QuoteBase.pdf; sourceTree = "<group>"; };
+		BD62219A2C5D1D4D00B9C4B0 /* DeleteAccountConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountConfirmation.swift; sourceTree = "<group>"; };
 		BDBA29D72C4BFA1400EBA486 /* SingleCustomItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCustomItemView.swift; sourceTree = "<group>"; };
 		BDBA29D92C4D122C00EBA486 /* CustomerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerView.swift; sourceTree = "<group>"; };
 		BDBA29DB2C4D687E00EBA486 /* RecordPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPaymentView.swift; sourceTree = "<group>"; };
 		BDBA29E32C5260F900EBA486 /* PDFGeneratorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGeneratorModel.swift; sourceTree = "<group>"; };
 		BDBCF3B92C54CA9A00B29F5C /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
-		BDBCF3BB2C551F3200B29F5C /* InvoiceBase.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = InvoiceBase.pdf; sourceTree = SOURCE_ROOT; };
-		BDBCF3BC2C551F3200B29F5C /* QuoteBase.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = QuoteBase.pdf; sourceTree = SOURCE_ROOT; };
 		BDBCF3C52C56540500B29F5C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		BDBCF3C72C56566E00B29F5C /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		BDBCF3C92C56655300B29F5C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -107,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD4A397D2C43FE54009F8BBE /* FirebaseDatabase in Frameworks */,
+				BD4D6B852C5BAC53007BE669 /* FirebaseStorage in Frameworks */,
 				BD4A397B2C43FE54009F8BBE /* FirebaseAuth in Frameworks */,
 				BD4A397F2C43FE54009F8BBE /* FirebaseFirestore in Frameworks */,
 			);
@@ -145,8 +163,8 @@
 		BD4A39462C42C4FB009F8BBE /* NeighbourApp */ = {
 			isa = PBXGroup;
 			children = (
-				BDBCF3BB2C551F3200B29F5C /* InvoiceBase.pdf */,
-				BDBCF3BC2C551F3200B29F5C /* QuoteBase.pdf */,
+				BD4D6B8C2C5D0ADB007BE669 /* InvoiceBase.pdf */,
+				BD4D6B8D2C5D0ADB007BE669 /* QuoteBase.pdf */,
 				BD4A39972C4A7EB0009F8BBE /* Sample.pdf */,
 				BD4A398B2C454365009F8BBE /* GoogleService-Info.plist */,
 				BD4A39472C42C4FB009F8BBE /* NeighbourAppApp.swift */,
@@ -195,6 +213,7 @@
 				BDBA29E22C4E7E0200EBA486 /* SharedViews */,
 				BDBA29E12C4E7DEC00EBA486 /* ExistingQuoteViews */,
 				BDBA29E02C4E7DDA00EBA486 /* NewQuoteViews */,
+				BD4D6B822C5B9D38007BE669 /* SplashView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				BD4A39992C4B9DD3009F8BBE /* SingleItemView.swift */,
+				BD4D6B8A2C5BB986007BE669 /* TestImageView.swift */,
 			);
 			path = Graveyard;
 			sourceTree = "<group>";
@@ -217,6 +237,10 @@
 				BD4A39932C4A7D76009F8BBE /* PDFViewRepresentable.swift */,
 				BDBCF3D12C57D1F800B29F5C /* UserModel.swift */,
 				BDBCF3D32C57D79500B29F5C /* Extensions.swift */,
+				BD4D6B7A2C5A3B16007BE669 /* EmailFormatter.swift */,
+				BD4D6B7C2C5B8E65007BE669 /* AuthManager.swift */,
+				BD4D6B7E2C5B8EF4007BE669 /* AppRootManager.swift */,
+				BD4D6B862C5BB5B6007BE669 /* ImageManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -257,6 +281,8 @@
 				BDBCF3C72C56566E00B29F5C /* AuthView.swift */,
 				BDBCF3C92C56655300B29F5C /* LoginView.swift */,
 				BDBCF3CB2C56723000B29F5C /* RegisterView.swift */,
+				BD4D6B802C5B913C007BE669 /* ForgotPasswordView.swift */,
+				BD62219A2C5D1D4D00B9C4B0 /* DeleteAccountConfirmation.swift */,
 			);
 			path = AuthViews;
 			sourceTree = "<group>";
@@ -291,6 +317,7 @@
 				BD4A397A2C43FE54009F8BBE /* FirebaseAuth */,
 				BD4A397C2C43FE54009F8BBE /* FirebaseDatabase */,
 				BD4A397E2C43FE54009F8BBE /* FirebaseFirestore */,
+				BD4D6B842C5BAC53007BE669 /* FirebaseStorage */,
 			);
 			productName = NeighbourApp;
 			productReference = BD4A39442C42C4FB009F8BBE /* Invoicr.app */;
@@ -360,11 +387,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDBCF3BD2C551F3200B29F5C /* InvoiceBase.pdf in Resources */,
 				BD4A39982C4A7EB0009F8BBE /* Sample.pdf in Resources */,
+				BD4D6B8F2C5D0ADB007BE669 /* QuoteBase.pdf in Resources */,
+				BD4D6B8E2C5D0ADB007BE669 /* InvoiceBase.pdf in Resources */,
 				BD4A394F2C42C4FC009F8BBE /* Preview Assets.xcassets in Resources */,
 				BD4A394C2C42C4FC009F8BBE /* Assets.xcassets in Resources */,
-				BDBCF3BE2C551F3200B29F5C /* QuoteBase.pdf in Resources */,
 				BD4A398C2C454365009F8BBE /* GoogleService-Info.plist in Resources */,
 				BDBCF3C62C56540500B29F5C /* Launch Screen.storyboard in Resources */,
 			);
@@ -386,19 +413,27 @@
 			files = (
 				BD4A39872C4535DB009F8BBE /* Router.swift in Sources */,
 				BDBCF3CA2C56655300B29F5C /* LoginView.swift in Sources */,
+				BD4D6B872C5BB5B6007BE669 /* ImageManager.swift in Sources */,
 				BD4A39832C442005009F8BBE /* ExistingQuotesView.swift in Sources */,
+				BD4D6B7F2C5B8EF4007BE669 /* AppRootManager.swift in Sources */,
 				BDBCF3CC2C56723000B29F5C /* RegisterView.swift in Sources */,
 				BD4A39782C43EEEE009F8BBE /* Base.swift in Sources */,
 				BDBCF3CE2C57BA1F00B29F5C /* HomeView.swift in Sources */,
 				BD4A399A2C4B9DD3009F8BBE /* SingleItemView.swift in Sources */,
 				BD4A399C2C4BA2F7009F8BBE /* ItemNoteView.swift in Sources */,
+				BD4D6B812C5B913C007BE669 /* ForgotPasswordView.swift in Sources */,
 				BDBA29DC2C4D687E00EBA486 /* RecordPaymentView.swift in Sources */,
+				BD4D6B8B2C5BB986007BE669 /* TestImageView.swift in Sources */,
 				BD4A39722C42CDA5009F8BBE /* NewItemView.swift in Sources */,
+				BD4D6B7D2C5B8E65007BE669 /* AuthManager.swift in Sources */,
 				BDBCF3D22C57D1F800B29F5C /* UserModel.swift in Sources */,
 				BD4A394A2C42C4FB009F8BBE /* ContentView.swift in Sources */,
 				BDBCF3C82C56566E00B29F5C /* AuthView.swift in Sources */,
+				BD4D6B7B2C5A3B16007BE669 /* EmailFormatter.swift in Sources */,
+				BD4D6B832C5B9D38007BE669 /* SplashView.swift in Sources */,
 				BD4A39812C44153F009F8BBE /* Quote.swift in Sources */,
 				BD4A39942C4A7D76009F8BBE /* PDFViewRepresentable.swift in Sources */,
+				BD62219B2C5D1D4D00B9C4B0 /* DeleteAccountConfirmation.swift in Sources */,
 				BDBCF3BA2C54CA9A00B29F5C /* SummaryView.swift in Sources */,
 				BDBA29DA2C4D122C00EBA486 /* CustomerView.swift in Sources */,
 				BD4A39482C42C4FB009F8BBE /* NeighbourAppApp.swift in Sources */,
@@ -576,7 +611,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = Ian.NeighbourApp;
 				PRODUCT_NAME = Invoicr;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -607,7 +642,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = Ian.NeighbourApp;
 				PRODUCT_NAME = Invoicr;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -710,6 +745,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BD4A39792C43FE54009F8BBE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		BD4D6B842C5BAC53007BE669 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD4A39792C43FE54009F8BBE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

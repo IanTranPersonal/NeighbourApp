@@ -15,6 +15,8 @@ class UserModel: ObservableObject {
     
     static let emptyUser = UserData()
     
+    var userLogo: UIImage?
+    
     func saveChanges() {
         do {
             let data = try JSONEncoder().encode(user)
@@ -38,6 +40,10 @@ class UserModel: ObservableObject {
             print("User failed to load - using empty user")
             user = UserModel.emptyUser
         }
+    }
+    
+    func logOutCalled() {
+        userData = nil
     }
     
     var isValidForm: Bool {

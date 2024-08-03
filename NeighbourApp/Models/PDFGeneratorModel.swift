@@ -24,16 +24,22 @@ class PDFGenerator {
         let pdfRenderer = UIGraphicsPDFRenderer(bounds: CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight))
         
         // Load attributes
-        let referenceText = quote.reference ?? ""
-        let amountText = String(quote.total?.formatted(.currency(code: "AUD")) ?? "To be advised")
-        let notesText = quote.notes ?? ""
+        let referenceText = quote.reference
+        let amountText = String(quote.total.formatted(.currency(code: "AUD")))
+        let notesText = quote.notes
         let customerText = quote.customer.map {$0.name + "\n" +  $0.email} ?? ""
-        let exGSTAmount = String(((quote.total ?? 0) * 0.9).formatted(.currency(code: "AUD")))
-        let gstAmount = String(((quote.total ?? 0) * 0.1).formatted(.currency(code: "AUD")))
-        let balanceAmount = String(quote.amount?.formatted(.currency(code: "AUD")) ?? "")
+        let exGSTAmount = String(((quote.total) * 0.9).formatted(.currency(code: "AUD")))
+        let gstAmount = String(((quote.total) * 0.1).formatted(.currency(code: "AUD")))
+        let balanceAmount = String(quote.amount.formatted(.currency(code: "AUD")))
         
         let user = UserModel.grabUser()
         let paymentInfo = "\(user.businessName) \nBSB: \(user.bsb) \nAccount Number: \(user.accNo)"
+        let abn = "ABN: \(user.abn)"
+        
+        var logo: UIImage?
+        if let image = UserModel.instance.userLogo {
+            logo = image
+        }
         
         let data = pdfRenderer.pdfData { context in
             let textAttributes: [NSAttributedString.Key: Any] = [
@@ -53,6 +59,14 @@ class PDFGenerator {
                 pdfContext.drawPDFPage(cgPage)
                 pdfContext.restoreGState()
                 
+                if let logo {
+                    let targetSize = CGSize(width: 170, height: 120)
+                    let resizedLogo = logo.resized(to: targetSize)
+                    
+                    let imageRect = CGRect(x: margin, y: margin, width: targetSize.width, height: targetSize.height)
+                    resizedLogo.draw(in: imageRect)
+                }
+                
                 // Add content on top of the background PDF
                 let properties = [
                     "\(Date().formatted(date: .numeric, time: .omitted))",
@@ -62,7 +76,8 @@ class PDFGenerator {
                     amountText,
                     exGSTAmount,
                     gstAmount,
-                    paymentInfo
+                    paymentInfo,
+                    abn
                 ]
                 // Reminder: X is L-R, Y is U-D
                 let positions: [CGPoint] = [
@@ -73,7 +88,8 @@ class PDFGenerator {
                     CGPoint(x: margin + 425, y: margin + 597), // Total
                     CGPoint(x: margin + 425, y: margin + 535), // Ex GST
                     CGPoint(x: margin + 425, y: margin + 555), // GST
-                    CGPoint(x: margin + 10, y: margin + 660) // Payment Info
+                    CGPoint(x: margin + 10, y: margin + 660), // Payment Info
+                    CGPoint(x: margin + 200, y: margin + 750) // ABN
                 ]
                 
                 for (index, property) in properties.enumerated() {
@@ -89,8 +105,8 @@ class PDFGenerator {
                     itemString.draw(in: CGRect(x: margin + 20, y: margin + 300 + marginMultiplier, width: contentWidth, height: pageHeight))
                 }
                 
-                if let paidAmount = quote.paidAmount, paidAmount > 0 {
-                    let paidAmountString = String(paidAmount.formatted(.currency(code: "AUD")))
+                if quote.paidAmount > 0 {
+                    let paidAmountString = String(quote.paidAmount.formatted(.currency(code: "AUD")))
                     let paidString = NSAttributedString(string: paidAmountString, attributes: textAttributes)
                     paidString.draw(in: CGRect(x: margin + 425, y: margin + 630, width: contentWidth, height: pageHeight))
                     balanceAmount.draw(in: CGRect(x: margin + 425, y: margin + 660, width: contentWidth, height: pageHeight))

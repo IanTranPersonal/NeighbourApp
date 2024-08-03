@@ -13,16 +13,23 @@ struct CustomerView: View {
     @Binding var phoneNumber: String
     @Binding var isShowing: Bool
     var body: some View {
-        Form {
-            Section(header: Text("Customer Details")) {
-                TextField("Name", text: $name)
-                TextField("Email", text: $email)
-                TextField("Contact Number", text: $phoneNumber)
-            }
-            Section {
-                Button("Save") {
-                    withAnimation(.linear){
-                        isShowing = false
+        VStack {
+            Form {
+                Section(header: Text("Customer Details")) {
+                    TextField("Name", text: $name)
+                    TextField("Email", value: $email, formatter: EmailFormatter())
+                                                .textInputAutocapitalization(.never)
+                                                .textContentType(.emailAddress)
+                                                .keyboardType(.emailAddress)
+                                                .autocorrectionDisabled()
+                    TextField("Contact Number", text: $phoneNumber)
+                        .keyboardType(.phonePad)
+                }
+                Section {
+                    Button("Save") {
+                        withAnimation(.linear){
+                            isShowing = false
+                        }
                     }
                 }
             }

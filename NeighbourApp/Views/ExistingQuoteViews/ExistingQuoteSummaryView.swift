@@ -12,13 +12,14 @@ struct ExistingQuoteSummaryView: View {
     var body: some View {
         HStack(alignment: .center, spacing: 60) {
             VStack(alignment: .leading ,spacing: 10){
-                Text(quote.reference ?? "First")
+                Text(quote.reference)
                     .bold()
                 
                 Text(quote.status.capitalized)
                     .foregroundColor(statusColor)
             }
-            Text("$\(String(format: "%.2f", quote.amount ?? 0.00))")
+            Spacer()
+            Text("$\(String(format: "%.2f", quote.amount))")
         }
     }
     private var statusColor: Color {

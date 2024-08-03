@@ -11,14 +11,14 @@ import FirebaseFirestore
 struct Quote: Codable, Identifiable {
     @DocumentID var id: String?
     var items: [QuoteItems]?
-    var reference: String?
+    var reference: String = ""
     var status: String = jobStatus.quote.rawValue
-    var amount: Double?
-    var notes: String?
+    var amount: Double = 0.00
+    var notes: String = ""
     var companyCode: String?
     var customer: Customer?
-    var paidAmount: Double?
-    var total: Double?
+    var paidAmount: Double = 0.00
+    var total: Double = 0.00
 }
 
 struct QuoteItems: Codable, Hashable {
