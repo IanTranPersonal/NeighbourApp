@@ -34,12 +34,21 @@ struct SingleExistingQuoteView: View {
             }
             .scrollContentBackground(.hidden)
             Spacer()
-                Button("Record Payment") {
+                Button {
                     withAnimation(.easeInOut) {
                         isShowingPayment.toggle()
                     }
+                } label: {
+                    Rectangle()
+                        .fill(Color.prussianBlue)
+                        .frame(width: 300, height: 50)
+                        .cornerRadius(10)
+                        .shadow(color: Color.skyBlue, radius: 3)
+                        .overlay {
+                            Text("Record Payment")
+                                .foregroundStyle(Color.customYellow)
+                        }
                 }
-                .buttonStyle(.borderedProminent)
                 .padding(.bottom, 20)
             
             
@@ -50,7 +59,7 @@ struct SingleExistingQuoteView: View {
                     }
                 } label: {
                     Rectangle()
-                        .fill(.blue)
+                        .fill(Color.prussianBlue)
                         .frame(width: 80, height: 80)
                         .cornerRadius(8)
                         .shadow(radius: 10)
@@ -61,7 +70,7 @@ struct SingleExistingQuoteView: View {
                                     .frame(width: 30, height: 30)
                                 Text("Notes")
                             }
-                            .foregroundColor(.white)
+                            .foregroundColor(.customYellow)
                         }
                 }
                 
@@ -71,7 +80,7 @@ struct SingleExistingQuoteView: View {
                     }
                 } label: {
                     Rectangle()
-                        .fill(.blue)
+                        .fill(Color.prussianBlue)
                         .cornerRadius(8)
                         .frame(width: 80, height: 80)
                         .shadow(radius: 10)
@@ -82,18 +91,18 @@ struct SingleExistingQuoteView: View {
                                     .frame(width: 30, height: 30)
                                 Text("Customer")
                             }
-                            .foregroundColor(.white)
+                            .foregroundColor(.customYellow)
                         }
                 }
                 Rectangle()
-                    .fill(.blue)
+                    .fill(Color.prussianBlue)
                     .frame(width: 80, height: 80)
                     .cornerRadius(8)
                     .overlay {
                         ShareLink(item: viewModel.shareItem()) {
                             Label("Email", systemImage: "envelope.fill")
                                 .labelStyle(TopIconStyle())
-                                .foregroundColor(.white)
+                                .foregroundColor(.customYellow)
                         }
                     }
             }
