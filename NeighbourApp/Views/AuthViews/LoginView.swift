@@ -39,7 +39,7 @@ struct LoginView: View {
                 ZStack(alignment: .leading) {
                     Text("Email")
                         .offset(y: -35)
-                    TextField("Email", value: $viewModel.userName, formatter: EmailFormatter())
+                    EmailTextField(email: $viewModel.userName)
                                                 .textInputAutocapitalization(.never)
                                                 .textContentType(.emailAddress)
                                                 .keyboardType(.emailAddress)
