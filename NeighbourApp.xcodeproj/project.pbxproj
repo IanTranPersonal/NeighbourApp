@@ -30,7 +30,6 @@
 		BD4D6B6A2C5A3316007BE669 /* InvoicrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B692C5A3316007BE669 /* InvoicrTests.swift */; };
 		BD4D6B752C5A3369007BE669 /* NewQuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B702C5A3369007BE669 /* NewQuoteTests.swift */; };
 		BD4D6B762C5A3369007BE669 /* UserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B712C5A3369007BE669 /* UserModelTests.swift */; };
-		BD4D6B772C5A3369007BE669 /* PDFGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B722C5A3369007BE669 /* PDFGeneratorTests.swift */; };
 		BD4D6B792C5A3369007BE669 /* ExistingQuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B742C5A3369007BE669 /* ExistingQuoteTests.swift */; };
 		BD4D6B7B2C5A3B16007BE669 /* EmailFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B7A2C5A3B16007BE669 /* EmailFormatter.swift */; };
 		BD4D6B7D2C5B8E65007BE669 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6B7C2C5B8E65007BE669 /* AuthManager.swift */; };
@@ -91,7 +90,6 @@
 		BD4D6B692C5A3316007BE669 /* InvoicrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicrTests.swift; sourceTree = "<group>"; };
 		BD4D6B702C5A3369007BE669 /* NewQuoteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewQuoteTests.swift; sourceTree = "<group>"; };
 		BD4D6B712C5A3369007BE669 /* UserModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelTests.swift; sourceTree = "<group>"; };
-		BD4D6B722C5A3369007BE669 /* PDFGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFGeneratorTests.swift; sourceTree = "<group>"; };
 		BD4D6B742C5A3369007BE669 /* ExistingQuoteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingQuoteTests.swift; sourceTree = "<group>"; };
 		BD4D6B7A2C5A3B16007BE669 /* EmailFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFormatter.swift; sourceTree = "<group>"; };
 		BD4D6B7C2C5B8E65007BE669 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 			children = (
 				BD4D6B742C5A3369007BE669 /* ExistingQuoteTests.swift */,
 				BD4D6B702C5A3369007BE669 /* NewQuoteTests.swift */,
-				BD4D6B722C5A3369007BE669 /* PDFGeneratorTests.swift */,
 				BD4D6B712C5A3369007BE669 /* UserModelTests.swift */,
 				BD4D6B692C5A3316007BE669 /* InvoicrTests.swift */,
 			);
@@ -453,7 +450,6 @@
 			files = (
 				BD4D6B6A2C5A3316007BE669 /* InvoicrTests.swift in Sources */,
 				BD4D6B762C5A3369007BE669 /* UserModelTests.swift in Sources */,
-				BD4D6B772C5A3369007BE669 /* PDFGeneratorTests.swift in Sources */,
 				BD4D6B752C5A3369007BE669 /* NewQuoteTests.swift in Sources */,
 				BD4D6B792C5A3369007BE669 /* ExistingQuoteTests.swift in Sources */,
 			);
@@ -595,7 +591,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"NeighbourApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 63H76G88XN;
 				ENABLE_PREVIEWS = YES;
@@ -626,7 +622,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"NeighbourApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 63H76G88XN;
 				ENABLE_PREVIEWS = YES;
