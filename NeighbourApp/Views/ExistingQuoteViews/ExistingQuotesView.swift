@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ExistingQuotesView: View {
     @EnvironmentObject var base: Base
-    @State private var searchText = ""
     var body: some View {
             List {
                 ForEach(base.quote) { quote in
@@ -29,15 +28,6 @@ struct ExistingQuotesView: View {
         })
     }
     
-    var quotes: [Quote] {
-        let quotes = base.quote
-        if searchText.isEmpty {
-            return quotes
-        }
-        else {
-            return quotes.filter({$0.reference.contains(searchText)})
-        }
-    }
     
     private func deleteItems(at offsets: IndexSet) {
         for index in offsets {

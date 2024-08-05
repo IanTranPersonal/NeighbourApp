@@ -83,7 +83,7 @@ struct ProfileView: View {
                     Button("Ok") {}
                 }
                 Button("Logout") {
-                    print("Logged out")
+                    logOut()
                 }
                 .foregroundStyle(.red)
             }

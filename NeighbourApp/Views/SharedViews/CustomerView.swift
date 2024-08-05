@@ -17,7 +17,7 @@ struct CustomerView: View {
             Form {
                 Section(header: Text("Customer Details")) {
                     TextField("Name", text: $name)
-                    TextField("Email", value: $email, formatter: EmailFormatter())
+                    EmailTextField(email: $email)
                                                 .textInputAutocapitalization(.never)
                                                 .textContentType(.emailAddress)
                                                 .keyboardType(.emailAddress)

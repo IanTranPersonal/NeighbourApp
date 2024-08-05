@@ -21,8 +21,9 @@ struct NewItemView: View {
                 Text("Reference")
                 TextField("  Reference", text: $viewModel.reference)
                     .frame(width: 150, height: 40)
-                    .border(.gray)
+                    .border(Color.deepBlue)
                     .cornerRadius(3)
+                    .shadow(color: Color.skyBlue, radius: 1)
             }
             List {
                 ForEach(viewModel.quoteItems.indices, id: \.self) { index in
@@ -32,10 +33,20 @@ struct NewItemView: View {
                     viewModel.quoteItems.remove(atOffsets: indexSet)
                 })
                 
-                Button("Add Item") {
+                Button {
                     viewModel.addItem()
+                } label: {
+                    HStack {
+                        Text("Add Item")
+                            .bold()
+                        Spacer()
+                        Image(systemName: "plus.circle")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
                 }
             }
+            .scrollContentBackground(.hidden)
             
             
             VStack(alignment: .leading) {
@@ -55,7 +66,7 @@ struct NewItemView: View {
             
             HStack(spacing: 50) {
                 Rectangle()
-                    .fill(.blue)
+                    .fill(Color.prussianBlue)
                     .cornerRadius(8)
                     .frame(width: 80, height: 80)
                     .shadow(radius: 10)
@@ -69,11 +80,11 @@ struct NewItemView: View {
                                     .frame(width: 30, height: 30)
                                 Text("Notes")
                             }
-                            .foregroundColor(.white)
+                            .foregroundColor(.customYellow)
                         }
                     }
                 Rectangle()
-                    .fill(.blue)
+                    .fill(Color.prussianBlue)
                     .cornerRadius(8)
                     .frame(width: 80, height: 80)
                     .shadow(radius: 10)
@@ -89,7 +100,7 @@ struct NewItemView: View {
                                     .frame(width: 30, height: 30)
                                 Text("Customer")
                             }
-                            .foregroundColor(.white)
+                            .foregroundColor(.customYellow)
                         }
                     }
             }
