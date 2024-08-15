@@ -43,7 +43,7 @@ class PDFGenerator {
         
         let data = pdfRenderer.pdfData { context in
             let textAttributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 14),
+                .font: UIFont.systemFont(ofSize: 10),
                 .paragraphStyle: NSMutableParagraphStyle()
             ]
             
@@ -60,10 +60,10 @@ class PDFGenerator {
                 pdfContext.restoreGState()
                 
                 if let logo {
-                    let targetSize = CGSize(width: 170, height: 120)
-                    let resizedLogo = logo.resized(to: targetSize)
+                    let targetSize = CGSize(width: 200, height: 120)
+                    let resizedLogo = logo.scalePreservingAspectRatio(targetSize: targetSize)
                     
-                    let imageRect = CGRect(x: margin, y: margin, width: targetSize.width, height: targetSize.height)
+                    let imageRect = CGRect(x: margin, y: margin, width: resizedLogo.size.width, height: resizedLogo.size.height)
                     resizedLogo.draw(in: imageRect)
                 }
                 
