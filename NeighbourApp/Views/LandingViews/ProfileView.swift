@@ -27,14 +27,23 @@ struct ProfileView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Personal Info")) {
-                TextField("Name", text: $viewModel.user.name)
-                    .focused($focusedField, equals: .name)
-                    .submitLabel(.next)
-                    .onSubmit { focusedField = .email }
-                EmailTextField(email: $viewModel.user.email)
-                    .focused($focusedField, equals: .email)
-                    .submitLabel(.done)
+            DisclosureGroup("Personal Info"){
+                Section(header: Text("Personal Information")) {
+                    TextField("Name", text: $viewModel.user.name)
+                        .focused($focusedField, equals: .name)
+                        .submitLabel(.next)
+                        .onSubmit { focusedField = .email }
+                    EmailTextField(email: $viewModel.user.email)
+                        .focused($focusedField, equals: .email)
+                        .submitLabel(.done)
+                }
+                Section(header: Text("Delete Account")) {
+                    Button("Delete Account") {
+                        presentDelete.toggle()
+                    }
+                    .bold()
+                    .foregroundStyle(.red)
+                }
             }
             Section {
                 TextField("Business Name", text: $viewModel.user.businessName)
@@ -55,6 +64,8 @@ struct ProfileView: View {
                     .keyboardType(.namePhonePad)
                     .focused($focusedField, equals: .accountNumber)
                     .submitLabel(.done)
+                TextEditorWithPlaceholder(text: $viewModel.user.termsWording)
+                
                 Button("Upload Logo File") {
                     isFilePickerPresented = true
                 }
@@ -70,6 +81,7 @@ struct ProfileView: View {
             } footer: {
                 Text(viewModel.user.businessName.isEmpty ? "You'll want to add this information in for your Invoices and Quotes" : "")
             }
+            
             Section {
                 Button("Save") {
                     focusedField = nil
@@ -88,13 +100,7 @@ struct ProfileView: View {
                 .foregroundStyle(.red)
             }
             
-            Section(header: Text("Delete Account")) {
-                Button("Delete Account") {
-                    presentDelete.toggle()
-                }
-                .bold()
-                .foregroundStyle(.red)
-            }
+            
         }
         .fileImporter(
             isPresented: $isFilePickerPresented,
@@ -120,7 +126,7 @@ struct ProfileView: View {
             viewModel.retrieveUser()
         })
         .sheet(isPresented: $presentDelete) {
-                DeleteAccountConfirmation(presentDelete: $presentDelete)
+            DeleteAccountConfirmation(presentDelete: $presentDelete)
                 .presentationDetents([.height(300)])
         }
     }
@@ -171,3 +177,29 @@ struct ProfileView: View {
 #Preview {
     ProfileView()
 }
+
+
+struct TextEditorWithPlaceholder: View {
+       @Binding var text: String
+       
+       var body: some View {
+           ZStack(alignment: .leading) {
+               if text.isEmpty {
+                  VStack {
+                       Text("Your Terms and Conditions...")
+                           .padding(.top, 10)
+                           .padding(.leading, 6)
+                           .opacity(0.6)
+                       Spacer()
+                   }
+               }
+               
+               VStack {
+                   TextEditor(text: $text)
+                       .frame(minHeight: 150, maxHeight: 300)
+                       .opacity(text.isEmpty ? 0.85 : 1)
+                   Spacer()
+               }
+           }
+       }
+   }

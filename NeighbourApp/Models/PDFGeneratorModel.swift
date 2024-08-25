@@ -83,18 +83,26 @@ class PDFGenerator {
                 let positions: [CGPoint] = [
                     CGPoint(x: margin + 350, y: margin + 195), // Date
                     CGPoint(x: margin + 15, y: margin + 160), // Customer
-                    CGPoint(x: margin + 350, y: margin + 160), // Reference
+                    CGPoint(x: margin + 350, y: margin + 156), // Reference
                     CGPoint(x: margin + 15, y: margin + 500), // Notes
-                    CGPoint(x: margin + 425, y: margin + 597), // Total
-                    CGPoint(x: margin + 425, y: margin + 535), // Ex GST
-                    CGPoint(x: margin + 425, y: margin + 555), // GST
-                    CGPoint(x: margin + 10, y: margin + 660), // Payment Info
-                    CGPoint(x: margin + 200, y: margin + 750) // ABN
+                    CGPoint(x: margin + 425, y: margin + 600), // Total
+                    CGPoint(x: margin + 425, y: margin + 538), // Ex GST
+                    CGPoint(x: margin + 425, y: margin + 558), // GST
+                    CGPoint(x: margin + 10, y: margin + 650), // Payment Info
+                    CGPoint(x: margin + 387, y: margin + 50 ) // ABN
                 ]
                 
                 for (index, property) in properties.enumerated() {
                     let attributedString = NSAttributedString(string: property, attributes: textAttributes)
                     attributedString.draw(in: CGRect(x: positions[index].x, y: positions[index].y, width: contentWidth, height: pageHeight))
+                }
+                
+                if !user.termsWording.isEmpty {
+                    let termsWording = NSAttributedString(string: user.termsWording, attributes: textAttributes)
+                    let termsHeader = NSAttributedString(string: "Terms and Conditions", attributes: [.font: UIFont.systemFont(ofSize: 10, weight: .bold), .underlineStyle: NSUnderlineStyle.single])
+                    termsHeader.draw(in: CGRect(x: margin + 10, y: margin + 720, width: contentWidth, height: pageHeight))
+                    termsWording.draw(in: CGRect(x: margin + 10, y: margin + 735, width: contentWidth, height: pageHeight))
+                    
                 }
                 
                 let items = quote.items?.compactMap {$0} .map {$0.item + (!$0.itemNote.isEmpty ? " - \($0.itemNote)" : "")}
@@ -108,9 +116,10 @@ class PDFGenerator {
                 if quote.paidAmount > 0 {
                     let paidAmountString = String(quote.paidAmount.formatted(.currency(code: "AUD")))
                     let paidString = NSAttributedString(string: paidAmountString, attributes: textAttributes)
-                    paidString.draw(in: CGRect(x: margin + 425, y: margin + 630, width: contentWidth, height: pageHeight))
-                    balanceAmount.draw(in: CGRect(x: margin + 425, y: margin + 660, width: contentWidth, height: pageHeight))
+                    paidString.draw(in: CGRect(x: margin + 425, y: margin + 633, width: contentWidth, height: pageHeight))
+                    balanceAmount.draw(in: CGRect(x: margin + 425, y: margin + 662, width: contentWidth, height: pageHeight))
                 }
+                
             }
             
         }

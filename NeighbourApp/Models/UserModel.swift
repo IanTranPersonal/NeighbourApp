@@ -58,6 +58,7 @@ struct UserData: Codable, Equatable {
     var abn: String = ""
     var bsb: String = ""
     var accNo: String = ""
+    var termsWording: String = ""
 }
 
 extension UserModel {
